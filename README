@@ -1,0 +1,16 @@
+Word Ladder 
+------------
+
+By: Sumanth Lingala
+www.sumanthlingala.info
+
+Description: 
+------------
+Given a dictionary and two input strings find the shortest connection between the two strings such that there is only one character change at every step. 
+
+Execution Procedure: 
+--------------------
+~> g++ filename.cpp
+~> ./a.out word_dict.txt 
+
+The dictionary is given as an input parameter. 

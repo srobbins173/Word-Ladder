@@ -1,0 +1,75 @@
+Number of dictionary words: 6404
+
+Enter String1: smart
+Enter String2: money
+smart and money exist in the dictionary !!
+Performing BFS: 
+String matched !!!!
+Word Ladder is as follows:
+smart ==> start ==> stars ==> sears ==> bears ==> beads ==> bends ==> bonds
+==> bones ==> hones ==> honey ==> money ==> Number of steps: 12
+
+Elapsed time: 2.71
+
+
+Enter String1: valor
+Enter String2: louse
+valor and louse exist in the dictionary !!
+Performing BFS: 
+
+A word ladder could not be constructed for the words
+Elapsed time: 0.01
+
+
+Enter String1: abcd
+Enter String2: efgh
+Error!!!!  One or more input strings do not exist in the dictionary
+
+Enter String1: smart
+Enter String2: smart
+Strings are Equal !!!
+
+Enter String1: melt
+Enter String2: neat
+melt and neat exist in the dictionary !!
+Performing BFS: 
+String matched !!!!
+Word Ladder is as follows:
+melt ==> meat ==> neat ==> Number of steps: 3
+
+Elapsed time: 0.01
+
+
+Enter String1: cell
+Enter String2: vane
+cell and vane exist in the dictionary !!
+Performing BFS: 
+String matched !!!!
+Word Ladder is as follows:
+cell ==> bell ==> ball ==> bale ==> vale ==> vane ==> Number of steps: 6
+
+Elapsed time: 0.5
+
+
+Enter String1: mall
+Enter String2: teen
+mall and teen exist in the dictionary !!
+Performing BFS: 
+String matched !!!!
+Word Ladder is as follows:
+mall ==> ball ==> bell ==> belt ==> beet ==> been ==> teen ==> Number of
+steps: 7
+
+Elapsed time: 1.83
+
+
+Enter String1: mall
+Enter String2: bent
+mall and bent exist in the dictionary !!
+Performing BFS: 
+String matched !!!!
+Word Ladder is as follows:
+mall ==> ball ==> bell ==> belt ==> bent ==> Number of steps: 5
+
+Elapsed time: 0.3
+

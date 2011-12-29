@@ -1,0 +1,81 @@
+Word Ladder 
+------------
+
+By: Sumanth Lingala
+www.sumanthlingala.info
+
+Description: 
+------------
+Given a dictionary and two input strings find the shortest connection between the two strings such that there is only one character change at every step. 
+
+Execution Procedure: 
+--------------------
+~> g++ filename.cpp
+~> ./a.out word_dict.txt 
+
+The dictionary is given as an input parameter. 
+
+Assumptions: 
+------------
+•  The given dictionary is sorted lexicographically. 
+•  Duplicate words in the dictionary can be neglected. 
+•  No numerals or special characters are allowed as part the valid words in the dictionary 
+•  No null strings are allowed in the dictionary. 
+•  The dictionary can contain words with different lengths but the input strings must be of the same length. 
+•  The word list and input strings are converted to lower case letters. 
+
+Techniques Used: 
+----------------
+•  BreadthFirstSearch:
+We use a graph representation to solve it. We start with a word as node and fan out to all its neighbors. At each level we can make a new list of all the words that might lead us to the solution at the next level. Then, if we don't find a solution at this level, assign that next-level list to the current level list and repeat. This is somewhat a Level Order traversal. Along with the solution we carry a "predecessors" list with the information about the parent. The “predecessors” list is useful for constructing the word ladder in the end. 
+V: Vertices E: Edges 
+Time Complexity: O (V + E) Space Complexity: O (V2) 
+
+•  BinarySearchonstrings:
+This algorithm is used to check if the given string exists in the dictionary. At each step it reduces the search space by half the input size. std::binary_search() function is used. 
+Time Complexity: O (log V) 
+
+Data structures Used:
+----------------------- 
+Data structure 	Access Time 	Insertion Time 		Advantage 
+-------------------------------------------------------------
+Arrays 			O(1) WT 	    O(1) WT 			Access time for arrays is 
+													less and easy to handle. 
+Strings 		O(1) WT 		O(1) WT 			Useful for storing dictionary. 
+													Also string classes provide 
+													good functionality like size(),
+													start(), end(). 
+Vectors 		O(1) AT 		O(1) AT 			Allows resizing of arrays 
+													whenever required hence size 
+													can be dynamic which suits our 
+													varying dictionary size. 
+													Vector STL classes are useful as well. 
+Queues 			O(1) WT at 		O(1) WT at 			Very Useful for BFS as we can add nodes 
+				front end 	 	rear end			at rear end and dequeue at front.
+(WT-> Worst Case Time; AT->Amortized time.)
+
+Complexity Analysis: 
+--------------------
+The graph must be stored in an adjacency matrix, which will occupy pre allocated O(V2) space. My method would not require so much space as the input strings are few and it’s easy to compute on the go. Binary Search reduces the time to search. 
+So the worst case time will be: 
+V => total number of strings in dictionary E => total number of edges in the graph m => Size of string
+k = 26 => Number of letters in English 
+Time taken: (m * k * log V) (where log V is binary search) for each string in the dictionary 
+Therefore: O( (V + E)* m * k * log V) =~ O((V + E)*m log V) =~ O((V+E) log V) for all the nodes during BFS. 
+Considering that m is small and k is constant.
+But if the same was computed for say DNA sequences then O((V+E) * m * log V) worst case time. 
+Also, please note that time taken by: vector resizing, char comparison, converting to upper case, queue_push, queue_pop, recursive method to print etc., is negligible compared to the size of the dictionary. 
+
+Results: 
+--------
+These are some of the results that I obtained on some runs: 
+
+1.	Enter String1: smart Enter String2: money 
+Word Ladder is as follows:
+smart ==> start ==> stars ==> sears ==> bears ==> beads ==> bends ==> bonds ==> bones ==> hones ==> honey ==> money ==> Number of steps: 12 
+        Elapsed time: 2.71 
+
+2.	Enter String1: melt Enter String2: neat 
+Word Ladder is as follows:
+melt ==> meat ==> neat ==> Number of steps: 3 
+        Elapsed time: 0.01 
